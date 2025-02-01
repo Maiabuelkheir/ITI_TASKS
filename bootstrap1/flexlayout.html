@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>flexlayout</title>
+    <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet" media="all">
+    <style>
+        .images{
+            width:500;
+           height:500;
+
+        }
+        *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        ul{
+            display:flex;
+            
+            min-height:10vh;
+            align-items: center;
+            justify-content:space-evenly;
+        }
+        ul>li{
+            list-style:none;
+        }
+        ul>li>a{
+            text-decoration:none;
+            color:rgb(186, 7, 7);
+            font-weight:bold;
+        }
+        ul>li>a:hover{
+            color:rgb(99, 95, 95);
+        }
+        .intro{
+            width:100vw;
+            height:90vh;
+            background-image:url(5.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items: center;
+            color:white;
+        }
+        .intro>h4{
+            font-size:3rem;
+            margin-bottom:1.2rem;
+        }
+        .intro>button{
+            padding:1.2rem 2rem;
+            outline:none;
+            border:none;
+            border-radius:1rem;;
+            background-image:linear-gradient(to left , transparent , rgb(162, 162, 228));
+        }
+        .intro>button:hover{
+            background-image:linear-gradient(to right , transparent , rgb(162, 162, 228));
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Gallery</a></li>
+    </ul>
+    <section class="intro">
+        <h4>ITI Tanta</h4>
+        <button>Register</button>
+    </section>
+    <div class="tracks">
+        <div class="track">
+            
+        </div>
+    </div>
+
+
+
+    <p class=" text-center display-5">activities</p>
+
+    <div class="row ">
+        <div class="images  col-12 col-md-4">
+            <img class=" image img-thumbnail" src="1.jpg">
+            <dl>
+                <dt>Antonio Gaudi
+                 <dd>The voices of Barcelona blur in a mix
+                    of Spanish and Catalan in much the
+                    way Gaudi's work blurs the lines.
+                   .</dd>
+               </dt>
+            </dl>
+     
+
+        </div>
+        <div class="images  col-12 col-md-4">
+            <img class=" image img-thumbnail" src="2.jpg">
+            <dl>
+                <dt>Park Guell
+                   
+                 <dd> The benches as Lizard fountain in
+                    Park Guell make up part of the
+                    UNESCO World Heritage Site know
+                    as, "The Works of Antonio Gaudi."
+          
+                   .</dd>
+               </dt>
+            </dl>
+        
+        </div>
+            <div class="images col-12 col-md-4">
+                <img class=" image img-thumbnail" src="1.jpg">
+                <dl>
+                    <dt>Antonio Gaudi
+                     <dd>The voices of Barcelona blur in a mix
+                        of Spanish and Catalan in much the
+                        way Gaudi's work blurs the lines.
+                        between architecture and artwork.
+                       .</dd>
+                   </dt>
+                </dl>
+         
+    
+            </div>
+            <div class="row ">
+                <div class="images col-12 col-md-3">
+                    <img class=" image img-thumbnail" src="1.jpg">
+                    <dl>
+                        <dt>Antonio Gaudi
+                         <dd>The voices of Barcelona blur in a mix
+                            of Spanish and Catalan in much the
+                            way Gaudi's work blurs the lines.
+                           .</dd>
+                       </dt>
+                    </dl>
+             
+        
+                </div>
+                <div class="images  col-12 col-md-3">
+                    <img class=" image img-thumbnail" src="2.jpg">
+                    <dl>
+                        <dt>Park Guell
+                           
+                         <dd> The benches as Lizard fountain in
+                            Park Guell make up part of the
+                            UNESCO World Heritage Site know
+                            as, "The Works of Antonio Gaudi."
+                  
+                           .</dd>
+                       </dt>
+                    </dl>
+                
+                </div>
+                    <div class="images col-12  col-md-3">
+                        <img class=" image img-thumbnail" src="1.jpg">
+                        <dl>
+                            <dt>Antonio Gaudi
+                             <dd>The voices of Barcelona blur in a mix
+                                of Spanish and Catalan in much the
+                                way Gaudi's work blurs the lines.
+                                between architecture and artwork.
+                               .</dd>
+                           </dt>
+                        </dl>
+                 
+            
+                    </div>
+                    <div class="images  col-12  col-md-3">
+                        <img class=" image img-thumbnail" src="1.jpg">
+                        <dl>
+                            <dt>Antonio Gaudi
+                             <dd>The voices of Barcelona blur in a mix
+                                of Spanish and Catalan in much the
+                                way Gaudi's work blurs the lines.
+                               .</dd>
+                           </dt>
+                        </dl>
+                 
+            
+                    </div>
+        </div>
+</body>
+</html>
