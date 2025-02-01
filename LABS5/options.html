@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+    <script>
+        function start() {
+         
+            var input = prompt("Enter array values separated by commas:");
+            var arr = input.split(",");
+            for (var i = 0; i < arr.length; i++) {
+                arr[i] = Number(arr[i].trim());
+                if (isNaN(arr[i])) {
+                    alert("Please enter valid numbers only.");
+                    return start();
+                }
+            }
+
+            
+            var option = prompt(
+                "Choose an option:\n" +
+                "a: Display array in original order\n" +
+                "b: Display array in ascending order\n" +
+                "c: Display array in descending order\n" +
+                "d: Display reversed array\n" +
+                "e: Display even numbers\n" +
+                "f: Find numbers divisible by a specific number\n" +
+                "g: Apply 30% discount to all numbers\n" +
+                "h: Concatenate numbers with ***"
+            );
+
+            switch (option) {
+                case 'a':
+                    alert("Original array: " + arr);
+                    break;
+                case 'b':
+                    var ascending = arr.slice();
+                    ascending.sort(function (a, b) { return a - b; });
+                    alert("Ascending order: " + ascending);
+                    break;
+                case 'c':
+                    var descending = arr.slice();
+                    descending.sort(function (a, b) { return b - a; });
+                    alert("Descending order: " + descending);
+                    break;
+                case 'd':
+                    var reversed = arr.slice();
+                    reversed.reverse();
+                    alert("Reversed array: " + reversed);
+                    break;
+                case 'e':
+                    var evens = [];
+                    for (var i = 0; i < arr.length; i++) {
+                        if (arr[i] % 2 === 0) {
+                            evens.push(arr[i]);
+                        }
+                    }
+                    if (evens.length > 0) {
+                        alert("Even numbers: " + evens);
+                    } else {
+                        alert("No even numbers found.");
+                    }
+                    break;
+                case 'f':
+                    var divisor = Number(prompt("Enter a number:"));
+                    var divisible = [];
+                    for (var i = 0; i < arr.length; i++) {
+                        if (arr[i] % divisor === 0) {
+                            divisible.push(arr[i]);
+                        }
+                    }
+                    if (divisible.length > 0) {
+                        alert("Numbers divisible by " + divisor + ": " + divisible);
+                    } else {
+                        alert("No numbers divisible by " + divisor + ".");
+                    }
+                    break;
+                case 'g':
+                    var discounted = [];
+                    for (var i = 0; i < arr.length; i++) {
+                        discounted.push((arr[i] * 0.7).toFixed(1));
+                    }
+                    alert("Discounted array: " + discounted);
+                    break;
+                case 'h':
+                    alert("Concatenated string: " + arr.join("***"));
+                    break;
+                default:
+                    alert("Invalid option. Please try again.");
+                    return start();
+            }
+
+          
+            if (confirm("Do you want to start again?")) {
+                start();
+            } else {
+                alert("Thank you for using the program!");
+            }
+        }
+
+       
+        start();
+    </script>
+</head>
+<body>
+</body>
+</html>

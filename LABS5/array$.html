@@ -1,0 +1,30 @@
+<html>
+<head></head>
+<body>
+ <script>
+
+  var arr=[];
+  var userInput;
+  
+    userInput = prompt("Enter values separated by commas :");
+    while(!(valid =/^([0-9],)+/.test(userInput))){
+    alert("invalid array");
+    userInput = prompt(" please Enter values separated by commas! :");
+    }
+
+   
+  
+  arr = userInput.split(",").map(Number);
+  //  ,هتفصل الارقام من عند split 
+//map هتحولها لarray مكونة من number
+  document.write(arr);
+  
+  
+ </script>
+
+
+
+</body>
+</html>
+
+  

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    table {
+      border: 1px solid red;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px 15px;
+      text-align: center;
+    }
+
+    p {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>As Follow</h1>
+  <p id="para"></p>
+
+  <script>
+    var values = [];
+    var duplicates = {};
+    var foundDuplicates = false;
+
+  
+    for (var i = 0; i < 6; i++) {
+      values.push(prompt("Enter value"));
+    }
+
+
+    document.write("<table cellspacing=0><tr><th>Values</th></tr>");
+    for (var j = 0; j < values.length; j++) {
+      document.write("<tr><td>" + values[j] + "</td></tr>");
+    }
+    document.write("</table>");
+
+
+    for (var x = 0; x < values.length; x++) {
+      for (var y = x + 1; y < values.length; y++) {
+        if (values[x] === values[y]) {
+          foundDuplicates = true;
+          if (!duplicates[values[x]]) {
+            duplicates[values[x]] = [];
+          }
+          if (!duplicates[values[x]].includes(x + 1)) {
+            duplicates[values[x]].push(x + 1);
+          }
+          if (!duplicates[values[x]].includes(y + 1)) {
+            duplicates[values[x]].push(y + 1);
+          }
+        }
+      }
+    }
+
+    var resultText = "";
+    if (foundDuplicates) {
+      for (var value in duplicates) {
+        resultText += "repeated value : " + value + " in rows: " + duplicates[value].join(", ") + "<br>";
+      }
+      document.getElementById("para").innerHTML = resultText;
+    } else {
+      document.getElementById("para").innerHTML = "no repeated values";
+    }
+  </script>
+</body>
+</html>

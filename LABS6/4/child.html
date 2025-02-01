@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        arr="hello every one hello every one hello every one hello every one"
+        var a = arr.split("");
+        var i=0;
+        function write() {
+            document.write(a[i]);
+            i++;
+        }
+
+        
+        setInterval("write()",20);
+        function windowclose(){
+            window.close();
+        }
+        setTimeout("windowclose()",arr.length*20)
+        
+        
+
+
+       
+      
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

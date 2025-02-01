@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        var today = new Date();
+        document.writeln(today.toLocaleString('ar-EG'));
+        document.writeln("<br>"+ today.getDay());
+        var n =today.getDay();
+   
+
+      switch(n) {
+            case 0:
+                alert('sunday');
+                break;
+
+            case 1:
+                alert('monday');
+                break;
+
+            case 2:
+                alert('tuesday');
+                break;
+
+            case 3:
+                alert('wednesday');
+                break;
+
+            case 4:
+                alert('thursday');
+                break;
+
+            case 5:
+                alert('friday');
+                break;
+
+            case 6:
+                alert('saturday');
+                break;
+
+            default:
+                alert('Invalid day');
+                break;
+        }
+      </script>
+    
+</body>
+</html>

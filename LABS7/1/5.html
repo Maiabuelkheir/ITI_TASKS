@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d6fe9f4ca7.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    
+<style>
+    
+    h1{
+        color: brown;
+        text-align: center;
+        
+    }
+    td{
+        background-color: brown;
+        color: white;
+        padding: 2px 75px;
+        margin: 10px 10px;
+    }
+    input[type="text"]{
+        width:400px;
+        padding:10px;
+        border-radius: 5px;
+
+    }
+    table{
+        padding: 10px;
+        margin: auto;
+    }
+    button{
+
+        width:100px;
+        padding: 10px;
+        background-color: gray;
+        border-radius: 50px;
+    }
+    #container{
+        text-align: center;
+    }
+    .fa-solid fa-trash,fa-regular fa-circle-check{
+        border-radius: 50%;
+
+    }
+     .linethrough {
+            text-decoration: line-through;
+   
+        }
+   
+</style>
+
+
+<script>
+    window.addEventListener('DOMContentLoaded',function(){
+        document.getElementsByTagName('button')[0].addEventListener('click',function(){
+        var createtr = document.createElement('tr')
+        var createtdone=document.createElement('td');
+        createtdone.innerHTML="<i class='fa-regular fa-circle-check'></i>";
+        var createtdtwo=document.createElement('td');
+        createtdtwo.innerHTML=document.getElementsByTagName("input")[0].value;
+        var createtdthree=document.createElement('td');
+        createtdthree.innerHTML="<i class='fa-solid fa-trash'></i>";
+        createtr.appendChild(createtdone);
+        createtr.appendChild(createtdtwo);
+        createtr.appendChild(createtdthree);
+        document.getElementsByTagName('table')[0].appendChild(createtr);
+
+        var allsaved=document.getElementsByClassName('fa-regular fa-circle-check');
+        for(var i=0; i<allsaved.length;i++){
+       allsaved[i].addEventListener('click',function(e){
+
+
+    e.target.style.backgroundColor='green';
+    e.target.style.borderRadius = '50%';
+
+
+
+   })};
+
+   var alldelete=document.getElementsByClassName('fa-solid fa-trash');
+   for(var j=0; j<alldelete.length;j++){
+   alldelete[j].addEventListener('click',function(e){
+
+   confirm("Are you sure to delete this?");
+   createTdTwo.classList.add('linethrough');
+
+  
+
+
+    }) }
+
+
+   
+        
+      
+
+    })
+        })
+
+  </script>
+</head>
+<body>
+    
+    <h1>To Do Organizer</h1>
+    <div id="container">
+    <input type="text" placeholder="Enter Task Name">
+    <button>Add</button>
+    </div>
+
+<table>
+    <tr>
+    <td>Done</td>
+    <td>Task</td>
+    <td>Delete</td>
+    </tr>
+      
+
+</table>
+
+
+    
+</body>
+</html>

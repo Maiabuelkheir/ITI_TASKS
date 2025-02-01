@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+       
+        <P id="phrase">welcome<span id="namee"></span></P>
+        <img id="image">
+        <script>
+          
+              var data = window.location.search.substring(1).split("&");
+       
+
+                 var namee = data[0].split("=")[1];
+                 var gender =data[2].split("=")[1];
+                 var colorr =data[3].split("=")[1];
+
+      
+        console.log(namee);
+        console.log(gender);
+        console.log(colorr);
+
+
+            if(gender=="m"){
+            document.getElementById("image").src="1.png"
+            }
+            else if (gender=="f"){
+            document.getElementById("image").src="2.png"
+
+            }
+            
+           document.getElementById("namee").innerText+=" "+namee
+           document.getElementById("namee").style.color=colorr
+
+        </script>
+    </body>
+</html>

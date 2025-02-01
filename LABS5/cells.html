@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            border: 2px groove yellow;
+
+            margin-top: 20px;
+        
+        }
+        td, th {
+            border: 1px solid yellow;
+            padding: 5px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+    
+        var arr1 = [1, 2, 3];
+        var arr2 = [4, 5, 6];
+        //var sum1 =arr1[0]+arr1[1]+arr1[2];
+       // var sum2 =arr2[0]+arr2[1]+arr2[2];
+          var sum1 = 0;
+        for (var i = 0; i < arr1.length; i++) {
+            sum1 += arr1[i];
+        }
+
+        var sum2 = 0;
+        for (var j = 0; j < arr2.length; j++) {
+            sum2 += arr2[j];
+        }
+    
+
+    
+        document.write("<table>");
+        document.write("<tr><th>ST1</th><th>ST2</th><th>ST3</th><td></td></tr>");
+
+       
+        document.write("<tr>");
+        for (var i = 0; i < 3; i++) {
+
+            document.write("<td>" + arr1[i] + "</td>");
+        }
+        document.write("<td>"+sum1+"</td>");
+        document.write("</tr>");
+
+       
+        document.write("<tr>");
+        for (var j = 0; j < 3; j++) {
+            document.write("<td>" + arr2[j] + "</td>");
+        }
+        document.write("<td>"+sum2+"</td>");
+        document.write("</tr>");
+        document.write("</table>");
+
+
+   
+    </script>
+</body>
+</html>

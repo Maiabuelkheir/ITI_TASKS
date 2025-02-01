@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 3px;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            const fullname = document.getElementById('fullname');
+            const email = document.getElementById('email');
+            const country = document.querySelector('select');
+            const zip = document.getElementById('ziip');
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+            fullname.focus();
+            fullname.addEventListener('blur', function() {
+                if (!validateName()) {
+                    document.getElementById('sn').innerText = "Invalid name";
+                    fullname.focus();
+                    fullname.select();
+                } else {
+                    document.getElementById('sn').innerText = "";
+                }
+            });
+
+            function validateName() {
+                return /^[A-z]{3,15}$/.test(fullname.value);
+            }
+
+            email.addEventListener('blur', function() {
+                if (!validateEmail()) {
+                    document.getElementById('snn').innerText = "Invalid Email";
+                    email.focus();
+                    email.select();
+                } else {
+                    document.getElementById('snn').innerText = "";
+                }
+            });
+
+            function validateEmail() {
+                return /^[A-z]+@gmail.com$/.test(email.value);
+            }
+
+            country.addEventListener('change', function() {
+                if (country.value === 'Egypt') {
+                    zip.value = "11566, 11827, 11762, 11851";
+                } else if (country.value === 'England') {
+                    zip.value = "AB1, AB10, AB11";
+                } else {
+                    zip.value = "";
+                }
+            });
+
+            document.forms[0].addEventListener('submit', function(e) {
+                let isChecked = false;
+                checkboxes.forEach((checkbox) => {
+                    if (checkbox.checked) {
+                        isChecked = true;
+                    }
+                });
+
+                if (!isChecked) {
+                    e.preventDefault();
+                    
+                }
+            });
+
+
+            document.forms[0].addEventListener('reset',function(e){
+                if(!confirm("Are you sure ?")){
+                    e.preventDefault();
+                }
+        });
+    });
+    </script>
+</head>
+<body>
+    <fieldset>
+        <form action="=https://www.yahoo.com" method="">
+            Name: <input type="text" id="fullname" placeholder="Enter your Fullname"><span id="sn"></span><br>
+            Country: 
+            <select>
+                <option value="Egypt">Egypt</option>
+                <option value="England">England</option>
+            </select><br>
+            Zip: <input type="text" id="ziip"><br>
+            E-mail: <input type="text" id="email" placeholder="Enter your Email"><span id="snn"></span><br>
+            Hobbies: 
+            Writing <input type="checkbox" value="Writing"> 
+            Reading <input type="checkbox" value="Reading"> 
+            Swimming <input type="checkbox" value="Swimming"> 
+            Sleeping <input type="checkbox" value="Sleeping"><br>
+           <input type="submit" value="Register"><br>
+            <input type="reset" value="Clear">
+        </form>
+    </fieldset>
+</body>
+</html>

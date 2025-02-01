@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <script>
+        var userNumber = prompt("Enter user number");
+        var firstRadix = parseInt(prompt("Enter first radix"));
+        var targetRadix = parseInt(prompt("Enter target radix"));
+
+        
+        function isValidForRadix(number, radix) {
+            const regex = new RegExp(`^[0-${radix <= 10 ? radix - 1 : '9A-F'}]+$`, "i");
+            return regex.test(number);
+        }
+
+        if (!isValidForRadix(userNumber, firstRadix)) {
+            document.write("The entered number is not valid for the given radix.");
+        } else {
+            
+            var decimal = parseInt(userNumber, firstRadix);
+            var result = decimal.toString(targetRadix);
+            document.write(`Converted result: ${result}`);
+        }
+    </script>
+</body>
+</html>

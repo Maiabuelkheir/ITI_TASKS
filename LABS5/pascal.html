@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+   
+</head>
+
+<body>
+   
+    <script>
+
+    var x = prompt("enter your name: ")
+    var arr = x.split("");
+    for(var j=0; j<arr.length; j++){
+    arr[j]= arr[j].toLowerCase();
+     }
+    arr[0] = arr[0].toUpperCase();
+
+    for(var i=0; i<arr.length; i++){
+
+           if(arr[i]==' '){
+        arr[i+1]=arr[i+1].toUpperCase();
+        
+    }
+
+    }
+    alert(arr.join(""));
+     </script>
+
+</body>
+
+</html>

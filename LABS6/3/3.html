@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+input[type="text"]{
+    width: 50%;
+}
+</style>
+<script>
+
+ window.addEventListener('DOMContentLoaded',function(){
+    var count = 1; // اعرفه هنا ف نطاق عام بعد ما الصفحة تتحمل
+    document.getElementsByTagName('button')[0].addEventListener('click',function(){
+    var createtr = document.createElement('tr')//بننشئ صف
+    var createtdone= document.createElement('td');//بننشئ 2 داتا
+   
+    createtdone.innerHTML = count; 
+    count++; 
+    console.log(count);
+    var createtdtwo=document.createElement('td');
+    createtdtwo.innerHTML= document.getElementsByTagName("input")[0].value;//بنset قيمة لتانى واحدة
+    createtr.appendChild(createtdone);// بنحط ال td جوا ال tr
+    createtr.appendChild(createtdtwo);//بنحط ال td جوا ال tr
+    document.getElementsByTagName('table')[0].appendChild(createtr)//بنحط ال row جوا ال ال table
+
+    document.getElementsByClassName('sum')[0].addEventListener('click', function() {
+        var rows = document.getElementsByTagName('tr');
+        var rowCount = rows.length - 1;  // علشان الصف الاولانى محجوز
+       document.getElementsByClassName('summ')[0].innerHTML=rowCount; 
+    });
+
+    })
+
+})
+</script>
+</head>
+<body>
+    <input type="text" name="text"><button>Add</button>
+    <table cellspacing="10px">
+        <tr>
+            <th>No:</th>
+            <th>News:</th>
+        </tr>
+    </table>
+    <button class="sum">countRows</button>
+    <p class="summ"></p>
+    
+</body>
+</html>
