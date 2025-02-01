@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var valid1,valid2,vaild3;
+        var projectId =prompt("Enter projectId");
+        while(!(valid1=/^[0-9]+$/.test(projectId))){
+           alert("please enter a vaild ID");
+           prompt("Enter projectId");
+        break; }
+
+
+        var projectname=prompt("Enter projectname");
+        while(!(valid2=/^[A-z]{3,10}/.test(projectname))){
+            alert("please enter a vaild name");
+            prompt("Enter projectname");
+            break;}
+
+
+        var duration=prompt("Enter duration");
+        while(!(valid3=/^[0-9]+/.test(duration))){
+            alert("please enter a vaild duration");
+            prompt("Enter duration");
+            break;}
+
+            const myobj={projectID:projectId,projectName:projectname,Duration:duration};
+            console.log(myobj);
+
+        
+       
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

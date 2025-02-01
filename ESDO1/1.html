@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        const validOperators = ['+', '-', '*', '%', '/'];
+                        function res(op,...arr)
+                        {// op هتاخد معامل حسابي
+                            // هتاخد القيم اي كان عددهمarr
+                             
+                           
+                             if(op === '/' && arr.includes(0)){
+                                console.log("not valid: Division by zero");
+                                return null;
+                                 // ف الدالة لما الreturn بيتنفذ بيخرج من الدالة كلها 
+                               // مش هينفذ اي كود ف الدالة بعدها 
+                             }
+                              
+                            else if(!validOperators.includes(op)){ // لو العلامة مش جوا المصفوفة
+                              console.log("Not a valid operator");
+                                return null;}
+            
+                            else{
+                            
+                            return eval(arr.join(op)); 
+                            // join هتجمع القيم وهتفصل بينهم بال operator  
+                             //eval بتعمل العمليات الحسابية بشكل سريع ف الجافاسكريبت}
+                             
+                            }
+                          }
+
+                             console.log(`result=${res('+',10,20,30,40)}`);
+                       
+                             console.log(`result=${res('/',0)}`);
+                        
+                             console.log(`result=${res('$',3,1,6,3)}`);
+                        
+    </script>
+</body>
+</html>

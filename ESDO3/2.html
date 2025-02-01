@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country and Neighbor Info</title>
+    <style>
+      
+        .divv {
+            border: 2px solid #ddd;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 8px;
+            width: 300px;
+            display: inline-block;
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+        }
+      
+    </style>
+</head>
+<body>
+ 
+
+    <div id="country"></div>
+
+    <div id="neighbor"></div>
+
+    <script>
+       
+        function displayCountry(data, elementId) {
+            const countryDiv = document.getElementById(elementId);
+            countryDiv.innerHTML = `
+                <div class="divv">
+                    <img src="${data.flag}" alt="Country Flag">
+                    <h3>${data.name}</h3>
+                    <p><strong>Region:</strong> ${data.region}</p>
+                    <p><strong>Population:</strong> ${data.population.toLocaleString()}</p>
+                    <p><strong>Language:</strong> ${data.languages[0].name}</p>
+                    <p><strong>Currency:</strong> ${data.currencies[0].name} (${data.currencies[0].code})</p>
+                </div>
+            `;
+        }
+
+      
+        function getCountryAndNeighbor(countryName) {
+        
+            fetch(`https://restcountries.com/v2/name/${countryName}`)
+                .then(response => {
+                    if (!response.ok) throw new Error('Country not found');
+                    return response.json();
+                })
+                .then(data => {
+                    const countryData = data[0];
+                    displayCountry(countryData, 'country');
+
+                   
+                    const neighbors = countryData.borders;
+                    if (neighbors && neighbors.length > 0) {
+                        const neighborCode = neighbors[1];
+                        return fetch(`https://restcountries.com/v2/alpha/${neighborCode}`);
+                    } else {
+                        throw new Error('No neighboring countries found');
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error('Neighbor not found');
+                    return response.json();
+                })
+                .then(neighborData => {
+                    displayCountry(neighborData, 'neighbor');
+                })
+                .catch(error => {
+                    console.error(error);
+                    document.getElementById('neighbor').innerHTML = `<p style="color:red;">${error.message}</p>`;
+                });
+        }
+
+       
+        getCountryAndNeighbor('egypt');
+    </script>
+</body>
+</html>
