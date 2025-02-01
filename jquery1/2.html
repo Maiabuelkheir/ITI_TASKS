@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jq-3-7-1.js"></script>
+  
+    <style>
+         #div1{
+            background-color: rgb(255, 0, 0);
+            width: 100px;
+            height:100px;
+            display: inline-block;
+         
+           }
+          
+           #div2{
+            background-color: rgb(0, 255, 179);
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+       
+           }
+          
+           #div3{
+            background-color: blue;
+            width: 100px;
+            height:100px;
+            display: inline-block;
+      
+           }
+          
+          
+         #div4{
+            background-color: rgb(255, 251, 0);
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+           
+           }
+
+          
+           
+    </style>
+    <script>
+
+
+// //first try
+$(document).ready(function() {
+  $("div").click(function() {
+    const rr = $(this).css("background-color"); 
+    // console.log(rr); 
+    $("p").html(`That div is <span>${rr}</span>`);
+    $("span").css("color", rr);
+   
+  });
+});
+
+
+// //second try
+// $(document).ready(function() {
+//   $("div").click(function(e) {
+//     const divv = $(e.target);
+//     console.log(divv)
+//     const rr=divv.css("background-color");
+//     $("p").html(`this<span>${rr}</span>`);
+//     $("span").css("color",rr)
+   
+  
+//   });
+// });
+
+
+//third try 
+// $(document).ready(function(){
+//       $('div').click(function(){
+//       $("div").each(function(index,element){
+
+//     if($(element).is(":hover")){
+//         const rr = $(element).css("background-color");
+//         $("p").html(`That div is <span>${rr}</span>`);
+//         $("span").css("background-color", rr);
+
+
+//         }
+
+//     })
+// })
+// })
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+     <div id="div1">
+     </div>
+
+     <div id="div2">
+     </div>
+
+     <div id="div3">
+     </div>
+
+     <div id="div4">
+     </div>
+
+     <p></p>
+     
+
+   
+</body>
+</html>

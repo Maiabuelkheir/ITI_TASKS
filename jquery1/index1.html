@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet" media="all">
+    <script src="jq-3-7-1.js"></script>
+
+    <style>
+       
+        *{
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+       
+        }
+        #offer{
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+        }
+        #mainheader{
+            display: grid;
+            grid-template-areas: "header header"
+                                 "section Announcement";
+            grid-template-columns:  1fr 3fr;
+            grid-template-rows: 0.25fr 4fr;
+            border:1px solid black;
+            border-bottom: 0;
+            border-top:0;
+        }
+/*     
+        body{
+        font-family: 'Courier New', Courier, monospace;
+        } */
+       
+    
+        header{
+            grid-area: header;
+            border: 1px solid rgb(151, 148, 148);
+            display: flex;
+            flex-direction: row;
+            height: 60px;
+            /* background-color:  rgb(198, 198, 238); */
+        }
+
+         #logo img{
+            width: 100px;
+            margin-top: 10px; 
+            background-image:linear-gradient(to left , transparent , rgb(162, 162, 228));
+        
+        
+        }
+        #logo img:hover{
+            background-image:linear-gradient(to right , transparent , rgb(162, 162, 228));
+
+        }
+         #logo{
+            margin-left: 100px;
+            width: 25%; 
+            }  
+
+        header .nav{
+            margin-top: 10px;
+            margin-left: 60px;
+            margin-right: 120px;
+            list-style-type: none;
+            justify-content: space-evenly;
+            display: flex;
+            flex-direction: row;
+            gap:60px;
+        
+        } 
+        .nav li{
+            margin-top: 10px;
+           
+        }
+         .nav li a{
+            text-decoration: none;
+            color: black;
+        
+        }
+        .nav li a:hover{
+            color: rgb(147, 139, 214);
+          
+        
+        }
+      
+        .active{
+            text-decoration: underline;
+            color: rgb(147, 139, 214);
+
+        }
+        section{
+            grid-area: section;
+            /* background-color: rgb(211, 211, 236); */
+            border-right: 1px solid gray;
+        }
+        #Announcement{
+            grid-area: Announcement;
+        }
+        .categories{
+           text-decoration: none;
+           margin-top: 10px;
+           list-style-type: none;
+        
+        }
+        .categories li{
+            line-height: 30px;
+        }
+        .categories li a{
+            text-decoration: none;
+            color: black;
+            margin-left: 100px;
+          
+          
+        }
+        #icons{
+            margin-left: 30px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+        input[type="search"]{
+            background-color: rgb(245, 245, 245);
+            width: 200px;
+            border: none;
+            outline: none;
+            padding: 8px;
+            margin-left: 10px;
+            margin-top: 15px;
+      
+
+        }
+        .icon{
+        color: rgb(44, 43, 43);
+        }
+       
+        #myimg{
+            width:800px ;
+            height:400px;
+          margin-top: 20px;
+          margin-left: 150px;
+           
+
+
+        }
+        #topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-image:linear-gradient(to right , transparent , rgb(162, 162, 228));
+ 
+        }
+        body {
+            padding-top: 20px;
+        }
+
+       
+      
+    </style>
+    <script>
+      var imgarr=["1.png","2.png","3.png","4.png","1.png"];
+      var i=0;
+        function startshow(){
+            t=setInterval("nextfun()",1200);
+        }
+        function nextfun(){
+            i++;
+            if(i>=imgarr.length) i=0;
+            myimg.src= imgarr[i];
+        }
+
+
+        $(document).ready(function(){
+
+            $(".nav li ").click(function(e){
+                e.preventDefault(); 
+                $(".nav li a").removeClass("active"); 
+                $(this).addClass("active"); 
+            })
+        })
+    </script>
+</head>
+
+<body  onload="startshow()">
+
+    <div id="topbar">
+        <p id="offer">Happy New Year!<img src="nn.png" alt=""> Get your chance of discounts with free delivery! <a href="#">shop now.</a></p>
+    </div>
+    <br>
+
+    <div id="mainheader">
+        <header>
+           
+                <div id="logo">
+                    <img src="logo.png" alt="logo">
+                </div>
+                
+                <ul class="nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            
+                <div id="search">
+                    <input type="search" placeholder=" what are you looking for?" >
+                </div>
+                <div id="icons">
+                <a href="#"><i class="fa-solid fa-cart-shopping icon" ></i></a>
+                <a href="#"><i class="fa-regular fa-user icon"></i></a>
+            </div>
+        
+        </header>
+    
+        <section>
+            <ul class="categories">
+
+               <li><a href="#">Smartphone</a></li>
+               <li><a href="#">Laptop</a></li>
+               <li><a href="#">Screens</a></li>
+               <li><a href="#">Television</a></li>
+               <li><a href="#">Projector</a></li>
+               <li><a href="#">Headphones</a></li>
+
+            </ul>
+         
+        </section>
+        <div id="Announcement">
+         <img id="myimg"src="1.png" alt =" ">
+            
+      
+        </div>
+   </div>
+
+   <div id="mainsection">
+
+
+
+
+
+
+
+
+
+   </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jq-3-7-1.js"></script>
+  
+    <style>
+         #div1{
+            background-color: rgb(255, 0, 0);
+            width: 150px;
+            height:100px;
+            display: inline-block;
+            color:rgb(255, 238, 0);
+         
+           }
+          
+           #div2{
+            background-color: rgb(0, 255, 179);
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            color:rgb(233, 76, 76)
+           }
+          
+           #div3{
+            background-color: blue;
+            width: 150px;
+            height:100px;
+            display: inline-block;
+            color:rgb(50, 50, 228)
+           }
+          
+          
+         #div4{
+            background-color: rgb(255, 251, 0);
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            color:rgb(57, 197, 44)
+           
+           }
+
+          
+           
+    </style>
+    <script>
+
+$(document).ready(function(){
+    $("div").click(function(){
+      var width=$(this).css("width");
+      var height=$(this).css("height");
+      var color=$(this).css("color");
+      var backgroundColor=$(this).css("background-color");
+      console.log(width); // بتأكد من النواتج بس
+      console.log(height);
+      console.log(color);
+      console.log(backgroundColor);
+      $("p").html(`the clicked div has the properities: <br> width:${width}
+      <br> height:${height}<br>color:${color}<br> background-color:${backgroundColor}`)
+      
+    })
+   })
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+     <div id="div1">
+        1
+     </div>
+
+     <div id="div2">
+        2
+     </div>
+
+     <div id="div3">
+        3
+     </div>
+
+     <div id="div4">
+        4
+     </div>
+
+     <p></p>
+
+   
+</body>
+</html>

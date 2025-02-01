@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country and Neighbor Info</title>
+    <script src="jq-3-7-1.js"></script>
+    <style>
+        .divv {
+            border: 2px solid #ddd;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 8px;
+            width: 300px;
+            display: inline-block;
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="country"></div>
+    <div id="neighbor"></div>
+
+    <script>
+        function displayCountry(data, elementId) {
+            const countryDiv = $(`#${elementId}`);
+            countryDiv.html(`
+                <div class="divv">
+                    <img src="${data.flag}" alt="Country Flag">
+                    <h3>${data.name}</h3>
+                    <p><strong>Region:</strong> ${data.region}</p>
+                    <p><strong>Population:</strong> ${data.population.toLocaleString()}</p>
+                    <p><strong>Language:</strong> ${data.languages[0].name}</p>
+                    <p><strong>Currency:</strong> ${data.currencies[0].name} (${data.currencies[0].code})</p>
+                </div>
+            `);
+        }
+
+        function getCountryAndNeighbor(countryName) {
+            $.ajax({
+                url: `https://restcountries.com/v2/name/${countryName}`,
+                method: "GET",
+                success: function(data) {
+                    const countryData = data[0];
+                    displayCountry(countryData, 'country');
+
+                    const neighbors = countryData.borders;
+                    if (neighbors && neighbors.length > 0) {
+                        const neighborCode = neighbors[1];
+                        $.ajax({
+                            url: `https://restcountries.com/v2/alpha/${neighborCode}`,
+                            method: "GET",
+                         success: function(neighborData) {
+                                displayCountry(neighborData, 'neighbor');
+                            },
+                         error: function() {
+                                $('#neighbor').html(`<p style="color:red;">Neighbor not found</p>`);
+                            }
+                        });
+                    } else {
+                        $('#neighbor').html(`<p style="color:red;">No neighboring countries found</p>`);
+                    }
+                },
+                error: function() {
+                    $('#country').html(`<p style="color:red;">Country not found</p>`);
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            getCountryAndNeighbor('egypt');
+        });
+    </script>
+</body>
+</html>

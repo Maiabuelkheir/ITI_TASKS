@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jq-3-7-1.js"></script>
+
+    <style>
+
+body{
+   
+    position: relative;
+}
+
+
+
+        *{
+            margin: 0;
+            padding: 0;
+            
+           
+
+        }
+
+        div{
+            margin: 10px 500px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(224, 102, 184);
+            position: absolute;
+         
+        }
+        button{
+            padding: 10px;
+            margin: 10px;
+        }
+
+    </style>
+
+    <script>
+    $("document").ready(function(){
+          $("button:eq(0)").click(function(){
+            $("div").animate({"left":"-=200"},500)
+             })
+
+             $("button:eq(1)").click(function(){
+            $("div").animate({"left":"+=200"},500)
+             })
+
+             $("button:eq(2)").click(function(){
+            $("div").animate({"left":"+=200" },500).animate({"top":"+=200"},500)
+            .animate({"left":"-=200"},500)
+            .animate({"top":"-=200"},500)
+    
+             })
+        
+     })
+    
+
+    </script>
+  
+</head>
+<body>
+    <button>Move left</button>
+    <button>Move Right</button>
+    <button>Move around</button>
+    <div></div>
+    
+</body>
+</html>

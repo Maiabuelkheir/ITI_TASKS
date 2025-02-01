@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jq-3-7-1.js"></script>
+
+
+
+    <script>
+        $.fn.extend({   
+       "listStyleType" :function(){
+          $(this).css("list-style-type", "georgian")
+          return this;
+        }
+        })
+        $.fn.extend({
+           colorfyListStartWithLetter: function(){ 
+            $(this).each(function() {
+                    if ($(this).text().match(/^[mM]/)) {  
+                        $(this).css("color", "blue");
+                        return this;
+            }})}
+
+
+        })
+
+
+
+        $(function(){
+            $("li").listStyleType().colorfyListStartWithLetter();
+
+        })
+    </script>
+</head>
+<body>
+    
+    <ul>
+        <li>Ahmed</li>
+        <li>Mohamed</li>
+        <li>Marwan</li>
+        <li>Malek</li>
+    </ul>
+      
+
+    
+
+</body>
+</html>

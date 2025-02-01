@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jq-3-7-1.js"></script>
+    <style>
+        button{
+            background-color: rgb(6, 6, 71);
+            width:100px;
+            height:50px;
+            color: white;
+        }
+        div{
+            margin-top: 10px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            overflow:auto;
+            padding: 10px;
+        }
+    </style>
+    <script>
+     $(function(){
+        $("button").click(function(){
+       
+      $.ajax({
+        url:"https://jsonplaceholder.typicode.com/posts", // لاحظى object
+        success:function(_data){
+            console.log(_data);
+       _data.forEach(function(posts){
+        $("div").append(`<p>${posts.title}</p>`)
+
+       })
+        },
+
+        error:function(_error){
+            console.log("error")
+
+        }
+    })
+    })
+
+     })
+
+    </script>
+</head>
+<body>
+    <button>Load Jason</button>
+    <div>
+
+    </div>
+</body>
+</html>

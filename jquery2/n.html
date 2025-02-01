@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jq-3-7-1.js"></script>
+
+<script>
+      $(function(){
+       
+        $("button").click(function(){
+            const rr=$("input").val();
+        $(`<td>${rr}</td>`).appendTo("table tr");  
+        
+      });
+    });
+
+
+  </script>
+
+  
+
+    <style>
+
+
+
+
+
+
+      
+       div{
+        margin: 10px 10px;
+       }
+        form{
+            border:1px solid gray;
+            width:25%;
+            height:25%;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div>
+        news Type:
+
+        <input type="radio" id="s" name="type" value="sport">
+        <label for="s">sport</label>
+        <input type="radio" id="s" name="type" value="social">
+        <label for="so">social</label>
+        <input type="radio" id="s" name="type" value="politic">
+        <label for="p">politic</label><br><br>
+
+        <input type="text" placeholder="add here"> <button>Add</button><br><br>
+        Search  <input type="text" >
+    </div>
+
+
+<table>
+    <tr>
+       <td></td>
+    </tr>
+</table>
+
+
+
+
+    </form>
+</body>
+</html>

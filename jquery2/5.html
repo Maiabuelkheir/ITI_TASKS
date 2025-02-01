@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Accordion - Default functionality</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( "#accordion" ).accordion();
+    } );
+
+
+
+     $.ajax({
+        url:"https://jsonplaceholder.typicode.com/users",
+         success: function(_data){
+            _data.forEach(function(users){
+                $("p").eq(0).append(_data[0].name);
+                $("p").eq(1).append(_data[1].name);
+                $("p").eq(2).append(_data[2].name);
+                $("p").eq(3).append(_data[3].name);
+                $("p").eq(4).append(_data[4].name);
+                $("p").eq(5).append(_data[5].name);
+                $("p").eq(6).append(_data[6].name);
+                $("p").eq(7).append(_data[7].name);
+                $("p").eq(8).append(_data[8].name);
+                $("p").eq(9).append(_data[9].name);
+                $("p").eq(10).append(_data[10].name);
+           
+            })
+        },
+        
+         
+         error:function(_error){
+            console.log("no data")
+         }
+    
+        })
+
+
+
+
+    </script>
+
+    <style>
+        #accordion{
+            width: 50%;
+            margin: 10px auto;
+             
+        }
+    </style>
+  </head>
+  <body>
+   
+  <div id="accordion">
+    <h3>Section 1</h3>
+    <div>
+      <p>
+      
+      </p>
+    </div>
+    <h3>Section 2</h3>
+    <div>
+      <p>
+ 
+      </p>
+    </div>
+    <h3>Section 3</h3>
+    <div>
+      <p>
+     
+      </p>
+     
+    </div>
+    <h3>Section 4</h3>
+    <div>
+      <p>
+ 
+      </p>
+  </div>
+  <h3>Section 5</h3>
+  <div>
+    <p>
+
+    </p>
+</div>
+<h3>Section 6</h3>
+<div>
+  <p>
+
+  </p>
+</div>
+<h3>Section 7</h3>
+<div>
+  <p>
+
+  </p>
+</div>
+<h3>Section 8</h3>
+<div>
+  <p>
+
+  </p>
+</div>
+<h3>Section 9</h3>
+<div>
+  <p>
+
+  </p>
+</div>
+<h3>Section 10</h3>
+<div>
+  <p>
+
+  </p>
+</div>
+   
+   
+   
+   
+  </body></html>
