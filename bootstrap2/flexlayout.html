@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>flexlayout</title>
+    <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <style>
+
+        #para{
+            background-color: salmon;
+            display: none;
+        }
+
+       .card.card-footer{
+            display: none;
+        }
+        .card:hover .card-footer{
+            display: block;
+        }
+
+
+dl{
+    text-align: center;
+}
+
+.imo{
+    opacity: 0.5;
+
+}
+
+.imo:hover{
+    opacity: 1;
+}
+.imagee dl{
+display: none;
+}
+
+.imagee:hover dl{
+display: block;
+}
+  
+.images:hover #para{
+display: block;
+}
+   
+        .images{
+            width:500;
+           height:500;
+
+        }
+        *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        ul{
+            display:flex;
+            
+            min-height:10vh;
+            align-items: center;
+            justify-content:space-evenly;
+        }
+        ul>li{
+            list-style:none;
+        }
+        ul>li>a{
+            text-decoration:none;
+            color:rgb(186, 7, 7);
+            font-weight:bold;
+        }
+        ul>li>a:hover{
+            color:rgb(99, 95, 95);
+        }
+        .intro{
+            width:100vw;
+            height:90vh;
+            background-image:url(8.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items: center;
+            color:white;
+        }
+        .intro>h4{
+            font-size:3rem;
+            margin-bottom:1.2rem;
+        }
+        .intro>button{
+            padding:1.2rem 2rem;
+            outline:none;
+            border:none;
+            border-radius:1rem;;
+            background-image:linear-gradient(to left , transparent , rgb(162, 162, 228));
+        }
+        .intro>button:hover{
+            background-image:linear-gradient(to right , transparent , rgb(162, 162, 228));
+        }
+    </style>
+
+
+</head>
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Gallery</a></li>
+    </ul>
+    <section class="intro">
+        <h4>ITI Tanta</h4>
+        <button>Register</button>
+    </section>
+    <div class="tracks">
+        <div class="track">
+            
+        </div>
+    </div>
+
+
+
+    <p class=" text-center display-5">activities</p>
+
+    <div class="row ">
+        <div class="images  col-12 col-md-4" onmouseover="funn(event)">
+            <img class=" image img-thumbnail" src="1.jpg">
+            <p id="para"><i class=" display-6 col-3 fa-brands fa-facebook text-light"></i><i class="display-6 col-3 fa-brands fa-twitter text-light"></i><i class="display-6 col-3 fa-brands fa-instagram text-light "></i><i class=" display-6 col-3  fa-brands fa-youtube text-light"></i></p>
+
+
+            <dl>
+                <dt>
+                 <dd>The voices of Barcelona blur in a mix
+                    of Spanish and Catalan in much the
+                    way Gaudi's work blurs the lines.
+                    between architecture and artwork.
+                    From the tiled benches in Guell Park.
+                    to the towers over Casa Mila and
+                    Casa Battló, I fell in love with Goudi's
+                    work on my first trip to Barcelona.
+                   .</dd>
+               </dt>
+            </dl>
+        </div>
+        <div class="images  col-12 col-md-4">
+            <img class=" image img-thumbnail" src="7.jpg">
+            <p id="para"><i class=" display-6 col-3 fa-brands fa-facebook text-light"></i><i class="display-6 col-3 fa-brands fa-twitter text-light"></i><i class="display-6 col-3 fa-brands fa-instagram text-light "></i><i class=" display-6 col-3  fa-brands fa-youtube text-light"></i></p>
+            <dl>
+                <dt>
+                   
+                 <dd> The benches as Lizard fountain in
+                    Park Guell make up part of the
+                    UNESCO World Heritage Site know
+                    as, "The Works of Antonio Gaudi."
+                    The park features Gaudi's famous
+                    Lizard Fountain, as well as benches
+                    and other extraordinary examples of Gaudi's talent with tiles.
+          
+                   .</dd>
+               </dt>
+            </dl>
+        
+          </div>
+          <div class="images col-12 col-md-4">
+                <img class=" image img-thumbnail" src="5.jpg">
+                <p id="para"><i class=" display-6 col-3 fa-brands fa-facebook text-light"></i><i class=" display-6 col-3 fa-brands fa-twitter text-light"></i><i class="display-6 col-3 fa-brands fa-instagram text-light "></i><i class=" display-6 col-3  fa-brands fa-youtube text-light"></i></p>
+                <dl>
+                    <dt>
+                     <dd>The benches as Lizard fountain in
+                        Park Guell make up part of the
+                        UNESCO World Heritage Site know
+                        as, "The Works of Antonio Gaudi."
+                        The park features Gaudi's famous
+                        Lizard Fountain, as well as benches
+                        and other extraordinary examples of Gaudi's talent with tiles.
+                       .</dd>
+                   </dt>
+                </dl>
+            </div>
+
+
+</div>
+
+            <div class="row ">
+                <div class="imagee col-12 col-md-3">
+                    <img class=" image img-thumbnail imo" src="4.jpg">
+                    <dl>
+                        <dt>Antonio Gaudi
+                         <dd>The voices of Barcelona blur in a mix
+                            of Spanish and Catalan in much the
+                            way Gaudi's work blurs the lines.
+                           .</dd>
+                       </dt>
+                    </dl>
+                 </div>
+                 <div class="imagee  col-12 col-md-3">
+                    <img class=" image img-thumbnail imo" src="9.jpg">
+                    <dl>
+                        <dt>Antonio Gaudi
+                         <dd>The voices of Barcelona blur in a mix
+                            of Spanish and Catalan in much the
+                            way Gaudi's work blurs the lines.
+                           .</dd>
+                       </dt>
+                    </dl>
+                   </div>
+                
+                    <div class="imagee col-12  col-md-3">
+                        <img class=" image img-thumbnail imo" src="8.jpg">
+                        <dl>
+                            <dt>Antonio Gaudi
+                             <dd>The voices of Barcelona blur in a mix
+                                of Spanish and Catalan in much the
+                                way Gaudi's work blurs the lines.
+                                between architecture and artwork.
+                               .</dd>
+                           </dt>
+                        </dl>
+                    </div>
+
+                    <div class="imagee  col-12  col-md-3">
+                        <img class=" image img-thumbnail imo" src="3.jpg">
+                        <dl>
+                            <dt>Antonio Gaudi
+                             <dd>The voices of Barcelona blur in a mix
+                                of Spanish and Catalan in much the
+                                way Gaudi's work blurs the lines.
+                               .</dd>
+                           </dt>
+                        </dl>
+                    </div>
+            </div>
+  
+
+
+
+<pre>
+   
+
+
+</pre>
+
+</body>
+</html>
